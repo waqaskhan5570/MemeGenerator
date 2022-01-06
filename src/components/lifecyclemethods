@@ -1,0 +1,30 @@
+react life cycle methods
+
+1. Render() => Render stuff to show
+
+2. componentDidMount() => like a re-render, to do things like an api call when you need to get data from an external sourc and Get the data needed to display it correctly.
+
+=====================================================
+Methods that won't be used in react-16.3 :
+
+1. ComponentWillRecieveProps(nextProps) => for recieving props from parent component and doing something with it  , also we may check if the props recieved are the different or the same that are already available. (This method is deprecated in react-16.3, so don't use it). If you still wanna use it you the name's changed to UNSAFE_componentWillRecieveProps() and will completely be removed in react-17.
+
+2. componentWillMount()
+
+3. componentWillUpdate()
+
+
+=================================================
+
+
+3. shouldComponentUpdate(nextProps, nextState) => helps the developer to optimize our app. it allows the component to determine wether or not to update. To make that decision this method will receive incoming props and states and in the body you will either return true if you want to update or false if you do not want to update the component.
+
+4. componentWillUnMount() => to do cleanup or teardown component before it disappears. Like(Example) if you have event listener in the componentDidMount() and that runs a code you can remove that event listener that in the componentWillUnMount() 
+
+
+============================================
+new lifecycle methods in 16.3 :
+
+5. static getDerivedStateFromProps(props, states) => return neew updated states based upon the props .. Used in rare cases, you don't need to use this .(not a common lifecylce method.)
+
+6. getSnapshotBeforeUpdate() => create a backup of the current way things are. (not a common lifecylce method.)
